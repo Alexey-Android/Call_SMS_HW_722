@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Call_SMS_HW_722</string>
+    <string name="_phonNumber">Введите номер телефона</string>
+    <string name="_call">Звоним</string>
+    <string name="_sms">Введите SMS сообщение</string>
+    <string name="_send">Отправляем</string>
+</resources>

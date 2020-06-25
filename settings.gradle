@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Call_SMS_HW_722"
