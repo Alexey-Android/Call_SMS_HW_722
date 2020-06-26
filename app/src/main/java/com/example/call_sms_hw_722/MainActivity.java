@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
 
-
         Button btnCall = findViewById(R.id.button_call);
         Button btnSMS = findViewById(R.id.button_sms);
 
@@ -94,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @SuppressLint("IntentReset")
     private void sendTextMessage() {
 
         final EditText etSMS = findViewById(R.id.et_sms);
@@ -106,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
 // Разрешение не получено
 // Делаем запрос на добавление разрешения отправки SMS
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, MY_PERMISSIONS_REQUEST_SEND_SMS);
+        } else {
 // Разрешение уже получено
             Intent smsIntent = new Intent(Intent.ACTION_VIEW);
             smsIntent.setData(Uri.parse("smsto:"));
@@ -115,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(Intent.createChooser(smsIntent, "Отправить смс с помощью"));
             SmsManager smgr = SmsManager.getDefault();
             smgr.sendTextMessage(call, null, sms, null, null);
-
         }
     }
 }
